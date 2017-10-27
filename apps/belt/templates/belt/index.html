@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    
+        <title>Longin and Registration | Home</title>
+    </head>
+    <body>
+        <div class="registration">
+            <h1>Registration</h1>
+            <form action='/register' method='POST'>
+                {% csrf_token %}
+                <div>
+                    <span style="color:blue;font-weight:bold">First_name :</span>
+                    <input type = "text" name="first_name" id="first_name" placeholder="First name">
+
+                </div>
+                <div>
+                <span style="color:blue;font-weight:bold">Last_name :</span>
+                <input type = "text" name="last_name" id="last_name" placeholder="Last name">
+                </div>
+                
+                <div>
+                    <span style="color:blue;font-weight:bold">Email Address :</span>
+                    <input type = "text" name="email" id="email" placeholder="enter your email id">
+                </div>
+                <div>
+                    <span style="color:blue;font-weight:bold">Password :</span>
+                    <input type = "password" name="password" id="password" placeholder="enter your password">
+
+                </div>
+
+                <div>
+                    <span style="color:blue;font-weight:bold">Confirm Password :</span>
+                    <input type = "password" name="confirm_password" id="confirm_password" placeholder="confirm your password">
+
+                </div>
+                    
+                <div>  
+                    <input type="submit"  value="Submit">
+                </div>     
+                      
+                   
+            </form>
+        </div>
+        
+        
+        <div class="login">
+            <form action='/login' method='POST'>
+                {% csrf_token %}
+                <div>
+                    <span style="color:blue;font-weight:bold">Email Address :</span>
+                    <input type = "text" name="email" id="email" placeholder="enter your email id">
+
+                </div>
+                <div>
+                    <span style="color:blue;font-weight:bold">Password :</span>
+                    <input type = "password" name="password" id="password" placeholder="enter your password">
+    
+                </div>
+                <div>
+                        <input type="submit"  value="LOG IN">
+                </div>
+        </div>
+        <div>
+            {% if messages %}
+                {% for message in messages %}
+                <h4>{{message}}</h4>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </body>
+</html>        
+
+        
